@@ -11,9 +11,11 @@ function RunTable({ runs }) {
           </tr>
         </thead>
         <tbody>
-          {runs.map((run, index) => (
+          {runs?.map((run, index) => (
             <tr key={index}>
-              <td>{index + 1}</td>
+              <td>
+                {Math.floor(index / 6)}.{(index % 6) + 1}
+              </td>
               <td>{run}</td>
             </tr>
           ))}

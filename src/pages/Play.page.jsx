@@ -49,7 +49,7 @@ function Play() {
           Total Run: <span className="font-bold">{totalRun}</span>
         </p>
         <div className="flex items-center gap-2 justify-center">
-          {matchRun.length <= 12 ? (
+          {matchRun.length < 12 ? (
             <button
               className="btn 
             bg-blue-500 text-white font-semibold py-2 px-4 rounded
@@ -61,9 +61,19 @@ function Play() {
               Bowl
             </button>
           ) : (
-            <p className="flex items-center gap-2 justify-center">
-              Match Finished Well done
-            </p>
+            <div className="flex flex-col ">
+              <p className="flex items-center gap-2 justify-center">
+                Match Finished Well done
+              </p>
+              <button
+                className="btn 
+          bg-green-500 text-white font-semibold py-2 px-4 rounded
+          hover:bg-green-700 hover:text-white
+          "
+              >
+                Full Score
+              </button>
+            </div>
           )}
         </div>
       </div>
