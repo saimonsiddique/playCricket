@@ -61,7 +61,7 @@ function Matches() {
               {currentMatches.map((match, index) => (
                 <tr
                   key={index}
-                  onClick={() => handleMatchClick(match)}
+                  // onClick={() => handleMatchClick(match)}
                   className="cursor-pointer hover:bg-gray-100"
                 >
                   <td className="flex gap-2">
@@ -79,6 +79,7 @@ function Matches() {
                     bg-blue-500 text-white font-semibold py-2 px-4 rounded
                     hover:bg-indigo-700 hover:text-white
                   "
+                      onClick={() => handleMatchClick(match)}
                     >
                       Match Details
                     </button>

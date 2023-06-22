@@ -25,16 +25,19 @@ function Play() {
     });
   }, [uuid]);
 
-  const handleBowl = () => {
-    const run = generateRun();
-    setMatchRun([...matchRun, run]);
-    setTotalRun(totalRun + run);
+  useEffect(() => {
     if (matchRun.length === 12) {
       axios.patch(`http://localhost:8080/matches/${uuid}`, {
         matchRun,
         totalRun,
       });
     }
+  }, [matchRun, totalRun, uuid]);
+
+  const handleBowl = () => {
+    const run = generateRun();
+    setMatchRun([...matchRun, run]);
+    setTotalRun(totalRun + run);
   };
 
   return (
