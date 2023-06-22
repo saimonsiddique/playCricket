@@ -37,7 +37,23 @@
         "teamName": "England",
         "flagUrl": "https://www.worldometers.info/img/flags/uk-flag.gif"
       },
-      "id": 2
+      "tossDecision": "bowl",
+      "id": 2,
+      "matchRun": [
+        2,
+        1,
+        4,
+        1,
+        2,
+        3,
+        3,
+        1,
+        4,
+        4,
+        3,
+        2
+      ],
+      "totalRun": 30
     }
   ],
   "teams": [
