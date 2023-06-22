@@ -57,7 +57,7 @@ function MatchDetails() {
         </p>
       </div>
       <div className="flex justify-center">
-        <div style={{ width: "70%" }}>
+        <div className="border-2 shadow-md rounded-md" style={{ width: "70%" }}>
           <RunTable runs={match?.matchRun} />
         </div>
       </div>
