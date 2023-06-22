@@ -48,7 +48,7 @@ function Matches() {
         </h1>
       </div>
       <div className="flex flex-col w-[70%] m-auto">
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto border-2 m-2 rounded-md shadow-sm">
           <table className="table">
             <thead>
               <tr>

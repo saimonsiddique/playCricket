@@ -90,7 +90,10 @@ function Play() {
         </div>
       </div>
       <div className="flex justify-center">
-        <div style={{ width: "70%" }}>
+        <div
+          className="border-2 rounded-md shadow-lg m-2"
+          style={{ width: "70%" }}
+        >
           <RunTable runs={matchRun} />
         </div>
       </div>
