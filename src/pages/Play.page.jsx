@@ -29,7 +29,7 @@ function Play() {
     const run = generateRun();
     setMatchRun([...matchRun, run]);
     setTotalRun(totalRun + run);
-    if (matchRun.length === 11) {
+    if (matchRun.length === 12) {
       axios.patch(`http://localhost:8080/matches/${uuid}`, {
         matchRun,
         totalRun,
