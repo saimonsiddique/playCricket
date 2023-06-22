@@ -8,9 +8,11 @@ function MatchDetails() {
   const { uuid } = useParams();
   const [match, setMatch] = useState({});
   const [winner, setWinner] = useState("");
+  
+  const baseURL = "https://play-cricket.onrender.com";
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/matches/${uuid}`).then((res) => {
+    axios.get(`${baseURL}/matches/${uuid}`).then((res) => {
       setMatch(res.data);
     });
   }, [uuid]);

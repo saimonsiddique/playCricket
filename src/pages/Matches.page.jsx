@@ -9,9 +9,10 @@ function Matches() {
   const [matchesPerPage] = useState(5);
 
   const navigate = useNavigate();
+  const baseURL = "https://play-cricket.onrender.com";
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/matches`).then((res) => {
+    axios.get(`${baseURL}/matches`).then((res) => {
       console.log(res.data);
       setAllMatches(res.data);
     });
@@ -34,7 +35,7 @@ function Matches() {
   };
 
   const handleDeleteMatch = (match) => {
-    axios.delete(`http://localhost:8080/matches/${match.id}`).then((res) => {
+    axios.delete(`${baseURL}/matches/${match.id}`).then((res) => {
       console.log(res.data);
       setAllMatches(allMatches.filter((m) => m.id !== match.id));
     });

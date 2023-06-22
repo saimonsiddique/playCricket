@@ -9,7 +9,7 @@ const Teams = () => {
   const [allTeams, setAllTeams] = useState([]);
   const [selectedTeams, setSelectedTeams] = useState([]);
 
-  const baseURL = "  http://localhost:8080";
+  const baseURL = "https://play-cricket.onrender.com";
   const navigate = useNavigate();
 
   useEffect(() => {

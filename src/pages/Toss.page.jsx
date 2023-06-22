@@ -10,6 +10,7 @@ function Toss() {
   const [selectedTeam, setSelectedTeam] = useState(selectedTeams[0]); // Set initial selected team
 
   const navigate = useNavigate();
+  const baseURL = "https://play-cricket.onrender.com";
 
   const handleTeamSelect = (team) => {
     setSelectedTeam(team);
@@ -23,7 +24,7 @@ function Toss() {
       tossWinner: selectedTeam,
     };
 
-    axios.post("http://localhost:8080/matches", newMatch).then((res) => {
+    axios.post(`${baseURL}/matches`, newMatch).then((res) => {
       navigate(`/play/${res.data.id}`);
     });
   };

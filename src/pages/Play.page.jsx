@@ -18,8 +18,10 @@ function Play() {
   const [matchRun, setMatchRun] = useState([]);
   const [totalRun, setTotalRun] = useState(0);
 
+  const baseUrl = "https://play-cricket.onrender.com";
+
   useEffect(() => {
-    axios.get(`http://localhost:8080/matches/${uuid}`).then((res) => {
+    axios.get(`/matches/${uuid}`).then((res) => {
       console.log(res.data);
       setMatch(res.data);
     });
@@ -27,7 +29,7 @@ function Play() {
 
   useEffect(() => {
     if (matchRun.length === 12) {
-      axios.patch(`http://localhost:8080/matches/${uuid}`, {
+      axios.patch(`${baseUrl}/matches/${uuid}`, {
         matchRun,
         totalRun,
       });
