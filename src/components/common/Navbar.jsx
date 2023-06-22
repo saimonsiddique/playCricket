@@ -12,22 +12,24 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar bg-indigo-200 px-10 shadow-lg">
+    <div className="navbar bg-indigo-400 px-10 shadow-lg flex justify-between">
       <a
-        className="btn btn-ghost normal-case text-xl"
+        className="btn btn-ghost uppercase text-xl"
         onClick={() => navigate("/")}
       >
         Cricket Game
       </a>
-      <a
-        className="btn btn-ghost normal-case text-xl"
-        onClick={handleSelectTeam}
-      >
-        Select Teams
-      </a>
-      <a className="btn btn-ghost normal-case text-xl" onClick={handleMatches}>
-        Matches
-      </a>
+      <div>
+        <a
+          className="btn btn-ghost text-xl uppercase"
+          onClick={handleSelectTeam}
+        >
+          Select Teams
+        </a>
+        <a className="btn btn-ghost text-xl uppercase" onClick={handleMatches}>
+          Matches
+        </a>
+      </div>
     </div>
   );
 }

@@ -30,11 +30,13 @@ function Play() {
     const run = generateRun();
     setMatchRun([...matchRun, run]);
     setTotalRun(totalRun + run);
-    // Update match run
-    axios.patch(`http://localhost:8080/matches/${uuid}`, {
-      matchRun: matchRun,
-      totalRun: totalRun,
-    });
+    // post matchRun to server after 12 balls
+    if (matchRun.length === 11) {
+      axios.patch(`http://localhost:8080/matches/${uuid}`, {
+        matchRun,
+        totalRun,
+      });
+    }
   };
 
   return (
