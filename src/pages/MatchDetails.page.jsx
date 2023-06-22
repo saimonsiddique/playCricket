@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import RunTable from "../components/RunTable";
+import Layout from "../components/common/Layout";
 
 function MatchDetails() {
   const { uuid } = useParams();
@@ -32,7 +33,7 @@ function MatchDetails() {
   }, [match]);
 
   return (
-    <>
+    <Layout>
       <div>
         <h1 className="flex justify-center text-4xl font-bold mb-5">
           Match Details
@@ -60,7 +61,7 @@ function MatchDetails() {
           <RunTable runs={match?.matchRun} />
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

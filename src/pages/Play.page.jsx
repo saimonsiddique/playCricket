@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
-import RunTable from "../components/RunTable";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import RunTable from "../components/RunTable";
+import Layout from "../components/common/Layout";
+
+function generateRun() {
+  const run = Math.floor(Math.random() * 6);
+  if (run === 5 || run === 0) {
+    return generateRun();
+  }
+  return run;
+}
 
 function Play() {
   const { uuid } = useParams();
@@ -29,7 +38,7 @@ function Play() {
   };
 
   return (
-    <div>
+    <Layout>
       <div>
         <h1 className="flex justify-center text-4xl font-bold mb-5">
           Lets Play Cricket
@@ -82,16 +91,8 @@ function Play() {
           <RunTable runs={matchRun} />
         </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 
 export default Play;
-
-function generateRun() {
-  const run = Math.floor(Math.random() * 6);
-  if (run === 5 || run === 0) {
-    return generateRun();
-  }
-  return run;
-}

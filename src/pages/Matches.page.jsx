@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Layout from "../components/common/Layout";
 
 function Matches() {
   const [allMatches, setAllMatches] = useState([]);
@@ -40,7 +41,7 @@ function Matches() {
   };
 
   return (
-    <>
+    <Layout>
       <div>
         <h1 className="flex justify-center text-4xl font-bold mb-5">
           All Matches
@@ -119,7 +120,7 @@ function Matches() {
           </button>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 

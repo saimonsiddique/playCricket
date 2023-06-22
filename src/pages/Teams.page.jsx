@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FlagCard from "../components/FlagCard";
 import Layout from "../components/common/Layout";
-import { useNavigate } from "react-router-dom";
 
 const Teams = () => {
   const [allTeams, setAllTeams] = useState([]);

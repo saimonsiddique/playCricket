@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import FlagCard from "../components/FlagCard";
 import axios from "axios";
+import FlagCard from "../components/FlagCard";
+import Layout from "../components/common/Layout";
 
 function Toss() {
   const location = useLocation();
@@ -28,7 +29,7 @@ function Toss() {
   };
 
   return (
-    <>
+    <Layout>
       <div className="m-auto">
         <div className="flex justify-center">
           <h1 className="text-4xl font-bold mb-5">Select Who will Bowl</h1>
@@ -64,7 +65,7 @@ function Toss() {
           </button>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }
 
