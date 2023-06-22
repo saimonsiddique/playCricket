@@ -20,14 +20,14 @@ function Navbar() {
         Cricket Game
       </a>
       <div>
+        <a className="btn btn-ghost text-xl uppercase" onClick={handleMatches}>
+          Matches
+        </a>
         <a
           className="btn btn-ghost text-xl uppercase"
           onClick={handleSelectTeam}
         >
-          Select Teams
-        </a>
-        <a className="btn btn-ghost text-xl uppercase" onClick={handleMatches}>
-          Matches
+          Play Game
         </a>
       </div>
     </div>

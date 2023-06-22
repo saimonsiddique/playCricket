@@ -6,7 +6,7 @@ import Layout from "../components/common/Layout";
 function Matches() {
   const [allMatches, setAllMatches] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [matchesPerPage] = useState(2);
+  const [matchesPerPage] = useState(5);
 
   const navigate = useNavigate();
 
@@ -65,9 +65,13 @@ function Matches() {
                   className="cursor-pointer hover:bg-gray-100"
                 >
                   <td className="flex gap-2">
-                    <span>{match?.team1?.teamName}</span>
+                    <span className="text-md font-semibold">
+                      {match?.team1?.teamName}
+                    </span>
                     vs
-                    <span>{match?.team2?.teamName}</span>
+                    <span className="text-md font-semibold">
+                      {match?.team2?.teamName}
+                    </span>
                   </td>
                   <td>
                     <button

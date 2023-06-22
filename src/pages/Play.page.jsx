@@ -5,7 +5,7 @@ import RunTable from "../components/RunTable";
 import Layout from "../components/common/Layout";
 
 function generateRun() {
-  const run = Math.floor(Math.random() * 6);
+  const run = Math.floor(Math.random() * 7);
   if (run === 5 || run === 0) {
     return generateRun();
   }
@@ -26,11 +26,9 @@ function Play() {
   }, [uuid]);
 
   const handleBowl = () => {
-    // Increase table row by 1 and add run to total run and update match matchRun
     const run = generateRun();
     setMatchRun([...matchRun, run]);
     setTotalRun(totalRun + run);
-    // post matchRun to server after 12 balls
     if (matchRun.length === 11) {
       axios.patch(`http://localhost:8080/matches/${uuid}`, {
         matchRun,
@@ -54,7 +52,7 @@ function Play() {
           <span className="text-lg font-bold">
             {match?.tossWinner?.teamName}
           </span>{" "}
-          won the toss and elected to {match?.tossDecision} first
+          won the toss and elected to bowl first
         </p>
         <p className="flex items-center gap-2 justify-center">
           Total Run: <span className="font-bold">{totalRun}</span>
