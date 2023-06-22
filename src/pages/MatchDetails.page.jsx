@@ -8,7 +8,7 @@ function MatchDetails() {
   const { uuid } = useParams();
   const [match, setMatch] = useState({});
   const [winner, setWinner] = useState("");
-  
+
   const baseURL = "https://play-cricket.onrender.com";
 
   useEffect(() => {
@@ -49,7 +49,7 @@ function MatchDetails() {
           <span className="text-lg font-bold">
             {match?.tossWinner?.teamName}
           </span>{" "}
-          won the toss and elected to {match?.tossDecision} first
+          won the toss and elected to bowl first
         </p>
         <p className="flex items-center gap-2 justify-center">
           Total Run: <span className="font-bold">{match?.totalRun}</span>
